@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  title : string = 'Angular 17.0.0';
+  title : string = 'Area de Salud y Seguridad en el Trabajo';
 }
