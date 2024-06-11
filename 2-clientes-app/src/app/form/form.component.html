@@ -1,0 +1,71 @@
+<div class="bg-slate-400 text-black font-bold rounded-lg shadow-lg">
+  <div class="px-4 py-2 text-xl">{{ titulo }}</div>
+  <div class="p-4">
+    <form>
+      <div class="mb-4">
+        <label for="nombre" class="block mb-2">Nombre</label>
+        <input
+          type="text"
+          [(ngModel)]="cliente.nombre"
+          class="block w-full px-4 py-2 rounded-lg bg-slate-300 text-black border border-gray-700 focus:outline-none focus:border-blue-500"
+          name="nombre"
+          required
+          minlength="4"
+          #nombre="ngModel"
+        />
+        <!--
+        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-red-500 text-sm">
+          <div *ngIf="nombre.errors.required">El nombre es requerido</div>
+          <div *ngIf="nombre.errors.minlength">El nombre debe tener al menos 4 caracteres</div>
+        </div>
+        -->
+      </div>
+      <div class="mb-4">
+        <label for="apellido" class="block mb-2">Apellido</label>
+        <input
+          type="text"
+          [(ngModel)]="cliente.apellido"
+          class="block w-full px-4 py-2 rounded-lg bg-slate-300 text-black border border-gray-700 focus:outline-none focus:border-blue-500"
+          name="apellido"
+          required
+          minlength="4"
+          #apellido="ngModel"
+        />
+        <!--
+        <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)" class="text-red-500 text-sm">
+          <div *ngIf="apellido.errors.required">El apellido es requerido</div>
+          <div *ngIf="apellido.errors.minlength">El apellido debe tener al menos 4 caracteres</div>
+        </div>
+      -->
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block mb-2">Email</label>
+        <input
+          type="text"
+          [(ngModel)]="cliente.email"
+          class="block w-full px-4 py-2 rounded-lg bg-slate-300 text-black border border-gray-700 focus:outline-none focus:border-blue-500"
+          name="email"
+          required
+          email
+          #email="ngModel"
+        />
+        <!--
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-red-500 text-sm">
+          <div *ngIf="email.errors.required">El email es requerido</div>
+          <div *ngIf="email.errors.email">El email debe tener un formato válido</div>
+        </div>
+      -->
+      </div>
+      <div class="flex flex-row">
+        <div class="flex-1">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            (click)="createCliente()"
+          >
+            Crear
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
